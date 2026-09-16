@@ -82,7 +82,7 @@
         <p>Everything built here is tested in the real world — balancing clean code with practical utility.</p>
       </div>
 
-      <!-- PROJECT 01: GIBBON (WITH VIDEO / DEMO TOGGLE) -->
+      <!-- PROJECT 01: GIBBON (WITH EMBEDDED VIDEO / TERMINAL TOGGLE) -->
       <article class="project reveal">
         <div class="project-top"><span>01</span><span>FLAGSHIP EXPERIMENT · AI APP</span></div>
         <div class="project-grid">
@@ -96,11 +96,10 @@
             <div class="tags"><span>PYTHON</span><span>GENAI</span><span>LLM APIS</span><span>WEB APP</span></div>
           </div>
           <div class="project-visual gibbon-visual">
-            <!-- Interactive media player/video slot mockup -->
             <div class="media-container">
               <div class="media-tabs">
                 <button class="m-tab active" data-view="terminal">Terminal View</button>
-                <button class="m-tab" data-view="video">Preview Demo</button>
+                <button class="m-tab" data-view="video">Walkthrough Video</button>
               </div>
               <div class="media-view active-view" id="terminal-view">
                 <div class="terminal">
@@ -111,10 +110,11 @@
                 </div>
               </div>
               <div class="media-view" id="video-view">
-                <div class="video-mockup">
-                  <div class="play-icon">▶</div>
-                  <p>Gibbon App Walkthrough Video</p>
-                  <small>Tap to load interactive prototype demo</small>
+                <div class="video-wrapper">
+                  <video controls preload="metadata" playsinline>
+                    <source src="gibbon_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
@@ -138,7 +138,6 @@
             <div class="tags"><span>FULL-STACK WEB</span><span>LOCAL SEO</span><span>BRANDING</span><span>SOCIAL CAMPAIGNS</span></div>
           </div>
           <div class="project-visual clinic-visual">
-            <!-- Mobile-friendly interactive slideshow -->
             <div class="slideshow-container" id="clinic-slideshow">
               <div class="slide active-slide">
                 <div class="clinic-card">
@@ -184,6 +183,7 @@
         <div class="cap reveal"><span>03</span><h3>Workflows & Data Systems</h3><p>Automating repetitive daily tasks, cleaning data pipelines, setting up SQL databases, and building clear Power BI dashboards.</p></div>
         <div class="cap reveal"><span>04</span><h3>Digital Presence & Creative</h3><p>Local search optimization, brand styling, social media campaign creatives, and clean digital storytelling for businesses.</p></div>
         <div class="cap reveal"><span>05</span><h3>Prototyping Ideas</h3><p>Got a random idea at 2 AM? We can rapidly test, wireframe, and prototype it into a functioning reality.</p></div>
+        <div class="cap reveal"><span>06</span><h3>Tech Consulting</h3><p>Unbiased guidance on what software or technology you actually need—saving you time and money.</p></div>
       </div>
     </section>
 
@@ -198,11 +198,10 @@
       </div>
     </section>
 
-    <!-- ABOUT SECTION WITH CINEMATIC BOOK/CARD FLIP TRANSITION -->
+    <!-- ABOUT SECTION WITH CINEMATIC BOOK-FLIP EFFECT -->
     <section id="about" class="about reveal">
       <div class="section-label">06 / THE LAB & FOUNDER</div>
       
-      <!-- Wrapper that handles 3D perspective flip effect -->
       <div class="book-container" id="bookContainer">
         <div class="book-card front-page">
           <div class="about-copy">
