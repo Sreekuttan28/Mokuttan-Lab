@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#07090d">
-  <meta name="description" content="MOKUTTAN LABS — a technology startup building practical AI, digital and automation solutions that make work easier.">
-  <title>MOKUTTAN LABS — Technology that makes things easier.</title>
+  <meta name="theme-color" content="#0b0f15">
+  <meta name="description" content="MOKUTTAN LABS — Independent AI & software laboratory building useful things for humans.">
+  <title>MOKUTTAN LABS — Technology that feels human.</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="noise"></div>
+  <canvas id="bg-canvas"></canvas>
+
   <header class="nav">
     <a class="brand" href="#top" aria-label="Mokuttan Labs home">
       <span class="mark">M</span>
@@ -19,160 +21,239 @@
     <nav class="links">
       <a href="#work">Work</a>
       <a href="#capabilities">Capabilities</a>
-      <a href="#about">About</a>
-      <a class="nav-cta" href="#start">Start a project ↗</a>
+      <a href="#about" class="about-trigger">About</a>
+      <a class="nav-cta" href="#start">Let's Talk ↗</a>
     </nav>
   </header>
 
   <main id="top">
-    <section class="hero">
-      <p class="eyebrow">INDEPENDENT TECHNOLOGY STARTUP · 2026</p>
-      <h1>You bring the<br><em>problem.</em><br>We’ll figure out<br>the technology.</h1>
+    <!-- HERO SECTION -->
+    <section class="hero reveal">
+      <p class="eyebrow">INDEPENDENT LAB · BENGALURU & KERALA</p>
+      <h1>You bring the messy problem.<br><em>We build the clean fix.</em></h1>
       <p class="hero-copy">
-        MOKUTTAN LABS helps people and businesses turn real-world problems into
-        practical digital solutions using modern technology, AI, automation and thoughtful design.
+        MOKUTTAN LABS is an independent technology studio. We build practical AI applications, 
+        smooth web systems, and custom automation that actually make your everyday work effortless.
       </p>
       <div class="actions">
-        <a class="button primary" href="#work">Explore what we're building</a>
-        <a class="button ghost" href="#start">Tell us what you're solving →</a>
+        <a class="button primary" href="#work">Explore our work</a>
+        <a class="button ghost" href="#start">Start a conversation →</a>
       </div>
-      <div class="scroll">SCROLL TO EXPLORE <span>↓</span></div>
+      <div class="scroll">SCROLL TO DISCOVER <span>↓</span></div>
     </section>
 
-    <section class="statement">
-      <div class="section-label">01 / THE IDEA</div>
+    <!-- PHILOSOPHY STATEMENT -->
+    <section class="statement reveal">
+      <div class="section-label">01 / OUR PHILOSOPHY</div>
       <div>
-        <h2>Technology shouldn't make life <span>harder.</span></h2>
+        <h2>Tech shouldn't feel like a second job. <span>It should just work.</span></h2>
         <p>
-          Most people don't need more technology. They need the right technology
-          applied to the right problem. We start with the problem, understand the
-          need, and build what actually makes the work easier.
+          Most software is overcomplicated. We prefer a simpler path: deeply understand what's broken, 
+          cut through the noise, and craft software tools that feel natural in human hands.
         </p>
       </div>
     </section>
 
-    <section class="problem">
-      <div class="section-label">02 / START WITH THE PROBLEM</div>
+    <!-- PROBLEM SOLVER -->
+    <section class="problem reveal">
+      <div class="section-label">02 / DIAGNOSTIC</div>
       <div>
-        <p class="big-question">What are you<br><span>trying to make easier?</span></p>
+        <p class="big-question">What are you trying to<br><span>make easier today?</span></p>
         <div class="chips">
-          <button data-answer="A repetitive business process">Something repetitive</button>
-          <button data-answer="A business that needs a stronger digital presence">My business presence</button>
-          <button data-answer="An idea I want to turn into an application">An idea I want to build</button>
-          <button data-answer="A workflow that could use AI or automation">Something I want to automate</button>
-          <button data-answer="I'm not sure yet — I just know something isn't working">I'm not sure yet</button>
+          <button data-answer="A repetitive workflow that eats up my time" data-sub="We can hook up smart automation or custom scripts to handle the heavy lifting.">Something repetitive</button>
+          <button data-answer="A business or clinic that needs a sharp digital footprint" data-sub="We design high-converting websites, clean branding, and digital presence that stands out.">My business presence</button>
+          <button data-answer="An AI idea or custom application I want to bring to life" data-sub="As an AI developer, I build custom models, GenAI apps, and functional web tools from scratch.">An AI app / idea</button>
+          <button data-answer="Data processing, dashboards, or messy spreadsheets" data-sub="We turn chaotic data into clean Python/SQL pipelines and insightful visual dashboards.">Data & workflows</button>
+          <button data-answer="I have a problem, but I am not sure how to fix it yet" data-sub="That's totally fine. Let's talk it out and figure out the simplest useful direction.">I'm not sure yet</button>
         </div>
         <div class="answer" aria-live="polite">
-          <span>YOU SAID</span>
-          <strong>Choose something above.</strong>
-          <p>That's enough to start a conversation.</p>
+          <span>WHAT YOU'RE SOLVING</span>
+          <strong id="ans-text">Select a card above to see how we tackle it.</strong>
+          <p id="ans-sub">We work backwards from your exact headache.</p>
         </div>
       </div>
     </section>
 
+    <!-- WORK SHOWCASE WITH VIDEO/SLIDESHOW -->
     <section id="work" class="work">
-      <div class="section-label">03 / WHAT WE'RE BUILDING</div>
+      <div class="section-label">03 / WHAT WE'VE BUILT</div>
       <div class="work-head">
-        <h2>Some things are<br><em>already real.</em></h2>
-        <p>We are building, testing and learning in public — one useful thing at a time.</p>
+        <h2>Real experiments.<br><em>Real impact.</em></h2>
+        <p>Everything built here is tested in the real world — balancing clean code with practical utility.</p>
       </div>
 
-      <article class="project featured">
-        <div class="project-top"><span>01</span><span>INTERNAL PRODUCT · TESTING</span></div>
+      <!-- PROJECT 01: GIBBON (WITH VIDEO / DEMO TOGGLE) -->
+      <article class="project reveal">
+        <div class="project-top"><span>01</span><span>FLAGSHIP EXPERIMENT · AI APP</span></div>
         <div class="project-grid">
           <div>
             <div class="project-logo">GIBBON<span>°</span></div>
-            <h3>A personalized AI<br>web application.</h3>
+            <h3>Gibbon: Personal AI Assistant</h3>
             <p>
-              Gibbon is MOKUTTAN LABS' first product experiment — exploring how
-              a personal AI application can adapt around an individual's needs,
-              preferences and everyday workflow.
+              A custom-engineered AI web application built to adapt around individual workflows. 
+              Features real-time search context, lightweight Python backend architecture, and a distraction-free user interface.
             </p>
-            <div class="tags"><span>AI</span><span>WEB APP</span><span>PYTHON</span><span>GENAI</span></div>
+            <div class="tags"><span>PYTHON</span><span>GENAI</span><span>LLM APIS</span><span>WEB APP</span></div>
           </div>
           <div class="project-visual gibbon-visual">
-            <div class="terminal">
-              <div class="dots">● ● ●</div>
-              <p>GIBBON // PERSONAL AI</p>
-              <div class="terminal-line">understanding your request<span>...</span></div>
-              <div class="terminal-line ok">✓ personalized response ready</div>
+            <!-- Interactive media player/video slot mockup -->
+            <div class="media-container">
+              <div class="media-tabs">
+                <button class="m-tab active" data-view="terminal">Terminal View</button>
+                <button class="m-tab" data-view="video">Preview Demo</button>
+              </div>
+              <div class="media-view active-view" id="terminal-view">
+                <div class="terminal">
+                  <div class="dots">● ● ●</div>
+                  <p>GIBBON // SESSION ACTIVE</p>
+                  <div class="terminal-line">parsing user context query<span>...</span></div>
+                  <div class="terminal-line ok">✓ contextual response deployed successfully</div>
+                </div>
+              </div>
+              <div class="media-view" id="video-view">
+                <div class="video-mockup">
+                  <div class="play-icon">▶</div>
+                  <p>Gibbon App Walkthrough Video</p>
+                  <small>Tap to load interactive prototype demo</small>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="project-footer"><span>STATUS · DEVELOPMENT / TESTING</span><a href="https://gibbon-assistant.onrender.com/" target="_blank" rel="noreferrer">Open live prototype ↗</a></div>
+        <div class="project-footer"><span>STATUS · LIVE STAGING</span><a href="https://gibbon-assistant.onrender.com/" target="_blank" rel="noreferrer">Open live app ↗</a></div>
       </article>
 
-      <article class="project">
-        <div class="project-top"><span>02</span><span>CLIENT PROJECT · VATAKARA</span></div>
+      <!-- PROJECT 02: LIFE AUDIOLOGY (WITH MOBILE-FRIENDLY SLIDESHOW) -->
+      <article class="project reveal">
+        <div class="project-top"><span>02</span><span>CLIENT DIGITAL LAUNCH · HEALTHCARE</span></div>
         <div class="project-grid">
           <div>
-            <div class="client-badge">LIFE AUDIOLOGY</div>
-            <h3>A digital presence<br>for better hearing care.</h3>
+            <div class="client-badge">LIFE AUDIOLOGY & SPEECH THERAPY</div>
+            <h3>Full-Stack Digital Launch & Clinic Web Platform</h3>
             <p>
-              A professional website created for Life Audiology & Speech Therapy
-              Center, Vatakara, based on the clinic's requirements. The work has
-              also expanded into social media handling and creative design.
+              Led the complete digital ecosystem development for the 11th branch launch in Vatakara. 
+              Built the responsive web platform (<a href="https://lifeaudiologyvatakara.in/" target="_blank" rel="noreferrer" style="color:var(--accent)">lifeaudiologyvatakara.in</a>), 
+              managed local SEO architecture, and created branded digital campaigns.
             </p>
-            <div class="tags"><span>WEBSITE</span><span>DESIGN</span><span>SOCIAL</span><span>CREATIVE</span></div>
+            <div class="tags"><span>FULL-STACK WEB</span><span>LOCAL SEO</span><span>BRANDING</span><span>SOCIAL CAMPAIGNS</span></div>
           </div>
           <div class="project-visual clinic-visual">
-            <div class="clinic-card"><span>LIFE AUDIOLOGY</span><strong>Precision<br>Hearing Care</strong><small>VATAKARA · KERALA</small></div>
+            <!-- Mobile-friendly interactive slideshow -->
+            <div class="slideshow-container" id="clinic-slideshow">
+              <div class="slide active-slide">
+                <div class="clinic-card">
+                  <span>BRANCH LAUNCH · VATAKARA</span>
+                  <strong>Precision<br>Hearing Care</strong>
+                  <small>Interactive Web Platform & Design</small>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="clinic-card alt-slide-1">
+                  <span>DIGITAL ASSETS</span>
+                  <strong>Brand Identity<br>& Campaign Creatives</strong>
+                  <small>Custom Social Media & Mascot Art</small>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="clinic-card alt-slide-2">
+                  <span>LOCAL REACH</span>
+                  <strong>Optimized Search<br>& Patient Experience</strong>
+                  <small>Seamless Mobile Navigation</small>
+                </div>
+              </div>
+              <div class="slide-controls">
+                <button class="slide-btn prev" aria-label="Previous slide">‹</button>
+                <span class="slide-indicator">1 / 3</span>
+                <button class="slide-btn next" aria-label="Next slide">›</button>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="project-footer"><span>STATUS · CLIENT WORK</span><a href="https://lifeaudiologyvatakara.in/" target="_blank" rel="noreferrer">View website ↗</a></div>
+        <div class="project-footer"><span>STATUS · DEPLOYED & ACTIVE</span><a href="https://lifeaudiologyvatakara.in/" target="_blank" rel="noreferrer">Visit live website ↗</a></div>
       </article>
     </section>
 
+    <!-- CAPABILITIES -->
     <section id="capabilities" class="capabilities">
-      <div class="section-label">04 / WHAT WE CAN DO</div>
-      <h2>We don't start with<br><em>a service list.</em></h2>
-      <p class="intro">We start with what needs to be solved. The technology follows the problem.</p>
+      <div class="section-label">04 / WHAT WE DO BEST</div>
+      <h2>Simple stack.<br><em>Serious execution.</em></h2>
+      <p class="intro">We don't sell bloated service catalogs. We apply the right tool directly to your problem.</p>
       <div class="cap-grid">
-        <div class="cap"><span>01</span><h3>AI & Intelligent Products</h3><p>Personal AI applications, AI-powered features, assistants and practical GenAI experiments.</p></div>
-        <div class="cap"><span>02</span><h3>Automation & Workflows</h3><p>Find repetitive work, simplify the process and introduce automation where it genuinely helps.</p></div>
-        <div class="cap"><span>03</span><h3>Websites & Web Apps</h3><p>Responsive digital experiences and useful web applications built around real business needs.</p></div>
-        <div class="cap"><span>04</span><h3>Data & Business Solutions</h3><p>Analytics, dashboards, process improvement and practical solutions for operational problems.</p></div>
-        <div class="cap"><span>05</span><h3>Digital Design & Social</h3><p>Social media handling, campaign creatives, posters, flex designs and digital brand presence.</p></div>
-        <div class="cap"><span>06</span><h3>Ideas → Experiments</h3><p>Not sure what something should become? We can explore the idea, prototype it and learn from it.</p></div>
+        <div class="cap reveal"><span>01</span><h3>AI & Custom Applications</h3><p>Building practical GenAI apps, smart assistants, and tailored automation tools that fit your exact workflow.</p></div>
+        <div class="cap reveal"><span>02</span><h3>Websites & Web Apps</h3><p>Fast, mobile-optimized websites and web applications built cleanly with modern HTML, CSS, Python, and JavaScript.</p></div>
+        <div class="cap reveal"><span>03</span><h3>Workflows & Data Systems</h3><p>Automating repetitive daily tasks, cleaning data pipelines, setting up SQL databases, and building clear Power BI dashboards.</p></div>
+        <div class="cap reveal"><span>04</span><h3>Digital Presence & Creative</h3><p>Local search optimization, brand styling, social media campaign creatives, and clean digital storytelling for businesses.</p></div>
+        <div class="cap reveal"><span>05</span><h3>Prototyping Ideas</h3><p>Got a random idea at 2 AM? We can rapidly test, wireframe, and prototype it into a functioning reality.</p></div>
+        <div class="cap reveal"><span>06</span><h3>Tech Consulting</h3><p>Unbiased guidance on what software or technology you actually need—saving you time and money.</p></div>
       </div>
     </section>
 
-    <section class="process">
+    <!-- PROCESS -->
+    <section class="process reveal">
       <div class="section-label">05 / HOW WE WORK</div>
       <div class="process-grid">
-        <div><span>01</span><h3>Listen</h3><p>Understand the problem before choosing a technology.</p></div>
-        <div><span>02</span><h3>Think</h3><p>Find the simplest useful direction instead of overengineering.</p></div>
-        <div><span>03</span><h3>Build</h3><p>Turn the idea into something real that people can actually use.</p></div>
-        <div><span>04</span><h3>Improve</h3><p>Test, learn, refine and keep moving with the problem.</p></div>
+        <div><span>01</span><h3>Talk</h3><p>You explain the headache. We listen closely.</p></div>
+        <div><span>02</span><h3>Simplify</h3><p>We strip away the clutter and design a clean fix.</p></div>
+        <div><span>03</span><h3>Build</h3><p>We craft the solution and test it live.</p></div>
+        <div><span>04</span><h3>Deliver</h3><p>You get a tool that makes your life easier.</p></div>
       </div>
     </section>
 
-    <section id="about" class="about">
-      <div class="section-label">06 / MOKUTTAN LABS</div>
-      <div class="about-copy">
-        <p class="quote">“Not everything needs a complicated solution. Sometimes it needs someone willing to understand the problem and build the right thing.”</p>
-        <p>
-          MOKUTTAN LABS is starting as a small technology startup with a simple
-          direction: make modern technology easier to use for people and businesses.
-          The long-term shape is still being discovered. For now, we build, test,
-          learn and follow the problems that are worth solving.
-        </p>
-        <div class="founder"><span class="avatar">S</span><div><strong>Sreekuttan</strong><small>Founder · MOKUTTAN LABS</small></div></div>
+    <!-- ABOUT SECTION WITH CINEMATIC BOOK/CARD FLIP TRANSITION -->
+    <section id="about" class="about reveal">
+      <div class="section-label">06 / THE LAB & FOUNDER</div>
+      
+      <!-- Wrapper that handles 3D perspective flip effect -->
+      <div class="book-container" id="bookContainer">
+        <div class="book-card front-page">
+          <div class="about-copy">
+            <p class="quote">“Good technology should feel invisible. It should just handle the friction so you can focus on what matters.”</p>
+            <p>
+              MOKUTTAN LABS is an independent technology startup founded by Sreekuttan. With deep experience in data attribution, 
+              workflow optimization, and full-stack building, the lab focuses on crafting useful, down-to-earth digital solutions.
+            </p>
+            <div class="about-actions-row">
+              <div class="founder">
+                <span class="avatar">S</span>
+                <div><strong>Sreekuttan</strong><small>Founder & AI Developer · MOKUTTAN LABS</small></div>
+              </div>
+              <button class="button ghost flip-btn" id="flipBookBtn">Read Studio Ethos ↻</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-card back-page">
+          <div class="about-copy">
+            <p class="quote">“Built in public. Driven by curiosity.”</p>
+            <p>
+              Whether it's deploying personal AI models like Gibbon, building high-performance healthcare platforms like Life Audiology, 
+              or tinkering with Python and SQL, everything here is built with care, speed, and absolute respect for the user experience.
+            </p>
+            <div class="about-actions-row">
+              <div class="founder">
+                <span class="avatar">M</span>
+                <div><strong>MOKUTTAN LABS</strong><small>Bengaluru & Kerala · Est. 2026</small></div>
+              </div>
+              <button class="button ghost flip-btn" id="unflipBookBtn">‹ Back to Bio</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="start" class="start">
-      <div class="section-label">07 / START A CONVERSATION</div>
+    <!-- START A CONVERSATION -->
+    <section id="start" class="start reveal">
+      <div class="section-label">07 / LET'S BUILD</div>
       <h2>Have a problem<br><em>worth solving?</em></h2>
-      <p>You don't need to know what technology you need. Tell us what you're trying to make easier.</p>
-      <a class="button primary large" href="mailto:hello@mokuttanlabs.com?subject=I have a problem to solve">Tell us about it ↗</a>
-      <div class="note">Email address can be changed when your official company email is ready.</div>
+      <p>No sales pitches. Just drop a message about what you're trying to build or fix.</p>
+      <a class="button primary large" href="mailto:hello@mokuttanlabs.com?subject=Let's build something together">Drop us an email ↗</a>
+      <div class="note">DIRECT LINE TO THE FOUNDER</div>
     </section>
   </main>
 
   <footer>
     <div class="footer-brand">MOKUTTAN <b>LABS</b></div>
-    <div>Ideas worth building.</div>
+    <div>Technology that feels human.</div>
     <div>© 2026 MOKUTTAN LABS</div>
   </footer>
 
