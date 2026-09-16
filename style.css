@@ -94,10 +94,27 @@ section{border-top:1px solid var(--line);position:relative}
 .terminal-line span{color:var(--accent)}
 .terminal-line.ok{color:var(--accent)}
 
-.video-mockup{text-align:center;padding:30px;background:linear-gradient(135deg,#151c28,#0b0f15);border-radius:6px;border:1px dashed var(--line);width:100%;cursor:pointer}
-.play-icon{width:48px;height:48px;background:rgba(196,255,110,.1);border:1px solid var(--accent);color:var(--accent);border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;font-size:16px}
-.video-mockup p{font:600 13px "DM Mono";color:var(--text);margin:0}
-.video-mockup small{font:10px "DM Mono";color:var(--muted);margin-top:6px;display:block}
+/* Embedded Video Styling */
+.video-wrapper{
+  width: 100%;
+  max-width: 420px;
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-wrapper video{
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  display: block;
+  object-fit: cover;
+  background: #000;
+}
 
 /* Slideshow Container for Clinic Work */
 .slideshow-container{position:relative;width:100%;height:100%;min-height:340px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#132822,#0b1210);padding:20px}
