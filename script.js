@@ -110,7 +110,6 @@ const aboutNavLink = document.querySelector('a.about-trigger');
 function toggleBookFlip(e) {
   if (e) e.preventDefault();
   bookContainer?.classList.toggle('flipped');
-  // Scroll smoothly to about section when clicked from nav
   document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
 }
 
