@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0b0f15">
+  <meta name="theme-color" content="#070913">
   <meta name="description" content="MOKUTTAN LABS — Independent AI & software laboratory building useful things for humans.">
   <title>MOKUTTAN LABS — Technology that feels human.</title>
   
@@ -23,7 +23,6 @@
       <path fill="currentColor" fill-opacity="0.09" d="M0,224L60,213.3C120,203,240,181,360,186.7C480,192,600,224,720,218.7C840,213,960,171,1080,165.3C1200,160,1320,192,1380,208L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
     </svg>
     <div class="coconut-trees">
-      <!-- Stylized Vector Palm/Coconut Tree 1 -->
       <svg class="tree tree-1" viewBox="0 0 100 150" fill="currentColor">
         <path d="M45,150 C45,110 42,70 38,20 L52,25 C55,70 58,110 58,150 Z" opacity="0.8"/>
         <path d="M45,30 C20,15 5,25 0,35 C15,38 30,42 45,35 Z"/>
@@ -31,7 +30,6 @@
         <path d="M42,20 C30,0 12,-5 2,2 C15,12 28,18 42,22 Z"/>
         <path d="M48,20 C62,-2 82,-8 92,0 C78,10 63,16 48,20 Z"/>
       </svg>
-      <!-- Stylized Vector Palm/Coconut Tree 2 -->
       <svg class="tree tree-2" viewBox="0 0 100 150" fill="currentColor">
         <path d="M50,150 C50,115 47,75 42,20 L56,22 C60,75 63,115 63,150 Z" opacity="0.8"/>
         <path d="M48,25 C25,12 8,20 2,30 C18,34 33,38 48,30 Z"/>
@@ -106,7 +104,7 @@
       </div>
     </section>
 
-    <!-- WORK SHOWCASE WITH VIDEO/SLIDESHOW -->
+    <!-- WORK SHOWCASE -->
     <section id="work" class="work">
       <div class="section-label">03 / WHAT WE'VE BUILT</div>
       <div class="work-head">
@@ -114,7 +112,7 @@
         <p>Everything built here is tested in the real world — balancing clean code with practical utility.</p>
       </div>
 
-      <!-- PROJECT 01: GIBBON (WITH EMBEDDED VIDEO / TERMINAL TOGGLE) -->
+      <!-- PROJECT 01: GIBBON (DEFAULT: AUTO-PLAYING CONTINUOUS LOOP VIDEO FIRST) -->
       <article class="project reveal">
         <div class="project-top"><span>01</span><span>FLAGSHIP EXPERIMENT · AI APP</span></div>
         <div class="project-grid">
@@ -130,23 +128,27 @@
           <div class="project-visual gibbon-visual">
             <div class="media-container">
               <div class="media-tabs">
-                <button class="m-tab active" data-view="terminal">Terminal View</button>
-                <button class="m-tab" data-view="video">Walkthrough Video</button>
+                <button class="m-tab active" data-view="video">Walkthrough Video</button>
+                <button class="m-tab" data-view="terminal">Terminal View</button>
               </div>
-              <div class="media-view active-view" id="terminal-view">
+              
+              <!-- Video View First & Active by Default -->
+              <div class="media-view active-view" id="video-view">
+                <div class="video-wrapper">
+                  <video autoplay muted loop playsinline preload="auto">
+                    <source src="gibbon_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+
+              <!-- Terminal View Second -->
+              <div class="media-view" id="terminal-view">
                 <div class="terminal">
                   <div class="dots">● ● ●</div>
                   <p>GIBBON // SESSION ACTIVE</p>
                   <div class="terminal-line">parsing user context query<span>...</span></div>
                   <div class="terminal-line ok">✓ contextual response deployed successfully</div>
-                </div>
-              </div>
-              <div class="media-view" id="video-view">
-                <div class="video-wrapper">
-                  <video controls preload="metadata" playsinline>
-                    <source src="gibbon_video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
                 </div>
               </div>
             </div>
@@ -155,7 +157,7 @@
         <div class="project-footer"><span>STATUS · LIVE STAGING</span><a href="https://gibbon-assistant.onrender.com/" target="_blank" rel="noreferrer">Open live app ↗</a></div>
       </article>
 
-      <!-- PROJECT 02: LIFE AUDIOLOGY (WITH MOBILE-FRIENDLY SLIDESHOW) -->
+      <!-- PROJECT 02: LIFE AUDIOLOGY (MOBILE SLIDESHOW) -->
       <article class="project reveal">
         <div class="project-top"><span>02</span><span>CLIENT DIGITAL LAUNCH · HEALTHCARE</span></div>
         <div class="project-grid">
@@ -230,13 +232,13 @@
       </div>
     </section>
 
-    <!-- ABOUT SECTION WITH CINEMATIC BOOK-FLIP EFFECT -->
+    <!-- ABOUT SECTION WITH BOOK FLIP -->
     <section id="about" class="about reveal">
       <div class="section-label">06 / THE LAB & FOUNDER</div>
       
       <div class="book-container" id="bookContainer">
         <div class="book-card front-page">
-          <div class="about-copy"> <br>
+          <div class="about-copy">
             <p class="quote">“Good technology should feel invisible. It should just handle the friction so you can focus on what matters.”</p>
             <p>
               MOKUTTAN LABS is an independent technology startup founded by Sreekuttan. With deep experience in data attribution, 
