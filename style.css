@@ -47,8 +47,20 @@ a{color:inherit;text-decoration:none}
 
 .links{display:flex;align-items:center;gap:22px;font:400 12px "DM Mono";text-transform:uppercase}.links a{color:var(--text)}.links a:hover{color:var(--accent)}
 
-.theme-toggle{background:var(--panel);border:1px solid var(--line);color:var(--text);padding:8px 12px;font:400 11px "DM Mono";border-radius:4px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s}
-.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+/* MOBILE NAV ACTIONS WRAPPER */
+.nav-mobile-actions{display:flex;align-items:center;gap:10px}
+
+/* SLIDING THEME TOGGLE SWITCH (IOS style pill) */
+.theme-slider{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:20px;width:115px;height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 8px;cursor:pointer;font:500 10.5px "DM Mono";text-transform:uppercase;overflow:hidden;transition:border-color .3s}
+.theme-slider:hover{border-color:var(--accent)}
+.slider-option{z-index:2;color:var(--muted);transition:color .3s;user-select:none}
+.slider-pill{position:absolute;top:3px;bottom:3px;left:3px;width:54px;background:var(--bg);border-radius:16px;border:1px solid var(--line);box-shadow:0 2px 6px rgba(0,0,0,.15);transition:transform .35s cubic-bezier(.16,1,.3,1)}
+
+/* Active Theme States for Sliding Pill */
+:root[data-theme="dark"] .slider-pill{transform:translateX(0)}
+:root[data-theme="dark"] .space-opt{color:var(--accent);font-weight:700}
+:root[data-theme="light"] .slider-pill{transform:translateX(52px)}
+:root[data-theme="light"] .kerala-opt{color:var(--accent);font-weight:700}
 
 .nav-cta{border:1px solid var(--line);padding:9px 14px!important;background:var(--panel);border-radius:4px}.menu{display:none;background:none;color:var(--text);border:0;font:400 12px "DM Mono"}
 
@@ -215,7 +227,7 @@ footer{max-width:var(--max);margin:auto;border-top:1px solid var(--line);padding
  .project h3{font-size:36px}
  .capabilities{padding-top:65px}.cap-grid{grid-template-columns:1fr}
  .cap{padding:24px 0!important;border-left:0!important;min-height:auto}
- .process{padding-top:65px}.process-grid{grid-template-columns:1fr 1fr;gap:30px}
+ .process{padding-top:75px}.process-grid{grid-template-columns:1fr 1fr;gap:30px}
  .process-grid>div{padding:0;border-left:0}
  .book-card{padding:30px 22px}
  .about-actions-row{flex-direction:column;align-items:flex-start}
