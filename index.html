@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,7 +7,7 @@
   <meta name="description" content="MOKUTTAN LABS — Independent AI & software laboratory building useful things for humans.">
   <title>MOKUTTAN LABS — Technology that feels human.</title>
   
-  <!-- FAVICON (Upload a small square symbol named favicon.png) -->
+  <!-- FAVICON -->
   <link rel="icon" type="image/png" href="favicon.png">
   
   <link rel="stylesheet" href="style.css">
@@ -16,9 +16,32 @@
   <div class="noise"></div>
   <canvas id="bg-canvas"></canvas>
 
+  <!-- KERALA TROPICAL HORIZON GRAPHICS (Visible only in Light Mode) -->
+  <div class="kerala-landscape" aria-hidden="true">
+    <svg class="mountain-silhouette" viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path fill="currentColor" fill-opacity="0.06" d="M0,192L48,181.3C96,171,192,149,288,160C384,171,480,213,576,213.3C672,213,768,171,864,165.3C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      <path fill="currentColor" fill-opacity="0.09" d="M0,224L60,213.3C120,203,240,181,360,186.7C480,192,600,224,720,218.7C840,213,960,171,1080,165.3C1200,160,1320,192,1380,208L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+    </svg>
+    <div class="coconut-trees">
+      <!-- Stylized Vector Palm/Coconut Tree 1 -->
+      <svg class="tree tree-1" viewBox="0 0 100 150" fill="currentColor">
+        <path d="M45,150 C45,110 42,70 38,20 L52,25 C55,70 58,110 58,150 Z" opacity="0.8"/>
+        <path d="M45,30 C20,15 5,25 0,35 C15,38 30,42 45,35 Z"/>
+        <path d="M45,25 C70,10 88,20 95,32 C78,36 60,40 45,30 Z"/>
+        <path d="M42,20 C30,0 12,-5 2,2 C15,12 28,18 42,22 Z"/>
+        <path d="M48,20 C62,-2 82,-8 92,0 C78,10 63,16 48,20 Z"/>
+      </svg>
+      <!-- Stylized Vector Palm/Coconut Tree 2 -->
+      <svg class="tree tree-2" viewBox="0 0 100 150" fill="currentColor">
+        <path d="M50,150 C50,115 47,75 42,20 L56,22 C60,75 63,115 63,150 Z" opacity="0.8"/>
+        <path d="M48,25 C25,12 8,20 2,30 C18,34 33,38 48,30 Z"/>
+        <path d="M48,22 C72,8 90,18 96,28 C80,33 63,36 48,26 Z"/>
+      </svg>
+    </div>
+  </div>
+
   <header class="nav">
     <a class="brand" href="#top" aria-label="Mokuttan Labs home">
-      <!-- FULL LOGO (Upload your logo image named logo.png) -->
       <img src="logo.png" alt="Mokuttan Labs Logo" class="brand-logo">
       <span>MOKUTTAN <b>LABS</b></span>
     </a>
@@ -27,6 +50,10 @@
       <a href="#work">Work</a>
       <a href="#capabilities">Capabilities</a>
       <a href="#about" class="about-trigger">About</a>
+      <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle aerospace/cream theme" title="Switch Theme">
+        <span class="theme-icon">🚀</span>
+        <span class="theme-label">Space</span>
+      </button>
       <a class="nav-cta" href="#start">Let's Talk ↗</a>
     </nav>
   </header>
