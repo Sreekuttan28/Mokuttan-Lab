@@ -52,12 +52,21 @@ if (canvas) {
   drawBg();
 }
 
-// 2. Sliding Theme Toggle Switch (Space Mode vs Cream Kerala Morning)
+// 2. Compact Theme Toggle (Space Mode vs Cream Kerala Morning)
 const themeToggleBtn = document.getElementById('themeToggleBtn');
+const themeIcon = themeToggleBtn?.querySelector('.theme-icon');
+const themeLabel = themeToggleBtn?.querySelector('.theme-label');
 
 function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('mokuttan_theme', theme);
+  if (theme === 'dark') {
+    if (themeIcon) themeIcon.textContent = '🚀';
+    if (themeLabel) themeLabel.textContent = 'Space';
+  } else {
+    if (themeIcon) themeIcon.textContent = '🌴';
+    if (themeLabel) themeLabel.textContent = 'Kerala';
+  }
 }
 
 const savedTheme = localStorage.getItem('mokuttan_theme') || 'dark';
