@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
 
-/* THEME VARIABLES (Default: Dark Aerospace Space Mode) */
 :root[data-theme="dark"]{
   --bg:#070913; --panel:#111624; --text:#f4f2ee; --muted:#9ba3b0;
   --line:rgba(244,242,238,.1); --accent:#c4ff6e; --warm:#f0c29a;
@@ -8,7 +7,6 @@
   --nav-bg:rgba(7,9,19,0.85);
 }
 
-/* THEME VARIABLES (Light Cream Kerala Morning Mode) */
 :root[data-theme="light"]{
   --bg:#f8f5ee; --panel:#eee8dd; --text:#1d222b; --muted:#5c6573;
   --line:rgba(29,34,43,.12); --accent:#216b35; --warm:#b85d1c;
@@ -19,15 +17,11 @@
 *{box-sizing:border-box} html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.6;overflow-x:hidden;transition:background 0.5s ease, color 0.5s ease}
 
-/* DARK MODE ATMOSPHERE (Outer Space Stars) */
 :root[data-theme="dark"] body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 85% 15%,rgba(196,255,110,.08),transparent 35%),radial-gradient(circle at 15% 55%,rgba(90,140,255,.06),transparent 30%),linear-gradient(180deg,#070913 0%,#03050a 100%);z-index:-3}
-
-/* LIGHT MODE ATMOSPHERE (Warm Cream Morning) */
 :root[data-theme="light"] body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 85% 15%,rgba(33,107,53,.05),transparent 35%),radial-gradient(circle at 15% 55%,rgba(184,93,28,.04),transparent 30%),linear-gradient(180deg,#fcf9f2 0%,#f0eae0 100%);z-index:-3}
 
 #bg-canvas{position:fixed;inset:0;pointer-events:none;z-index:-2;opacity:.6}
 
-/* TROPICAL KERALA LANDSCAPE */
 .kerala-landscape{position:fixed;bottom:0;left:0;right:0;height:180px;pointer-events:none;z-index:-2;opacity:0;transition:opacity 0.6s ease;overflow:hidden}
 :root[data-theme="light"] .kerala-landscape{opacity:1}
 .mountain-silhouette{position:absolute;bottom:0;left:0;width:100%;height:100%;color:#1d222b}
@@ -47,20 +41,12 @@ a{color:inherit;text-decoration:none}
 
 .links{display:flex;align-items:center;gap:22px;font:400 12px "DM Mono";text-transform:uppercase}.links a{color:var(--text)}.links a:hover{color:var(--accent)}
 
-/* MOBILE NAV ACTIONS WRAPPER */
-.nav-mobile-actions{display:flex;align-items:center;gap:10px}
+/* COMPACT MOBILE NAV ACTIONS WRAPPER */
+.nav-mobile-actions{display:flex;align-items:center;gap:8px}
 
-/* SLIDING THEME TOGGLE SWITCH (IOS style pill) */
-.theme-slider{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:20px;width:115px;height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 8px;cursor:pointer;font:500 10.5px "DM Mono";text-transform:uppercase;overflow:hidden;transition:border-color .3s}
-.theme-slider:hover{border-color:var(--accent)}
-.slider-option{z-index:2;color:var(--muted);transition:color .3s;user-select:none}
-.slider-pill{position:absolute;top:3px;bottom:3px;left:3px;width:54px;background:var(--bg);border-radius:16px;border:1px solid var(--line);box-shadow:0 2px 6px rgba(0,0,0,.15);transition:transform .35s cubic-bezier(.16,1,.3,1)}
-
-/* Active Theme States for Sliding Pill */
-:root[data-theme="dark"] .slider-pill{transform:translateX(0)}
-:root[data-theme="dark"] .space-opt{color:var(--accent);font-weight:700}
-:root[data-theme="light"] .slider-pill{transform:translateX(52px)}
-:root[data-theme="light"] .kerala-opt{color:var(--accent);font-weight:700}
+/* COMPACT THEME TOGGLE BUTTON */
+.theme-toggle{background:var(--panel);border:1px solid var(--line);color:var(--text);padding:8px 12px;font:400 11px "DM Mono";border-radius:4px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
 
 .nav-cta{border:1px solid var(--line);padding:9px 14px!important;background:var(--panel);border-radius:4px}.menu{display:none;background:none;color:var(--text);border:0;font:400 12px "DM Mono"}
 
