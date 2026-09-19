@@ -43,15 +43,23 @@
       <img src="logo.png" alt="Mokuttan Labs Logo" class="brand-logo">
       <span>MOKUTTAN <b>LABS</b></span>
     </a>
-    <button class="menu" aria-label="Open menu" aria-expanded="false">MENU</button>
+    
+    <!-- MOBILE ACTION WRAPPER (Theme slider + Menu button side by side on mobile) -->
+    <div class="nav-mobile-actions">
+      <!-- Sliding Theme Switcher -->
+      <button class="theme-slider" id="themeToggleBtn" aria-label="Toggle aerospace/cream theme" title="Switch Theme">
+        <span class="slider-pill"></span>
+        <span class="slider-option space-opt">🚀 Space</span>
+        <span class="slider-option kerala-opt">🌴 Kerala</span>
+      </button>
+      
+      <button class="menu" aria-label="Open menu" aria-expanded="false">MENU</button>
+    </div>
+
     <nav class="links">
       <a href="#work">Work</a>
       <a href="#capabilities">Capabilities</a>
       <a href="#about" class="about-trigger">About</a>
-      <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle aerospace/cream theme" title="Switch Theme">
-        <span class="theme-icon">🚀</span>
-        <span class="theme-label">Space</span>
-      </button>
       <a class="nav-cta" href="#start">Let's Talk ↗</a>
     </nav>
   </header>
@@ -112,7 +120,7 @@
         <p>Everything built here is tested in the real world — balancing clean code with practical utility.</p>
       </div>
 
-      <!-- PROJECT 01: GIBBON (DEFAULT: AUTO-PLAYING CONTINUOUS LOOP VIDEO FIRST) -->
+      <!-- PROJECT 01: GIBBON -->
       <article class="project reveal">
         <div class="project-top"><span>01</span><span>FLAGSHIP EXPERIMENT · AI APP</span></div>
         <div class="project-grid">
@@ -131,8 +139,6 @@
                 <button class="m-tab active" data-view="video">Walkthrough Video</button>
                 <button class="m-tab" data-view="terminal">Terminal View</button>
               </div>
-              
-              <!-- Video View First & Active by Default -->
               <div class="media-view active-view" id="video-view">
                 <div class="video-wrapper">
                   <video autoplay muted loop playsinline preload="auto">
@@ -141,8 +147,6 @@
                   </video>
                 </div>
               </div>
-
-              <!-- Terminal View Second -->
               <div class="media-view" id="terminal-view">
                 <div class="terminal">
                   <div class="dots">● ● ●</div>
@@ -157,7 +161,7 @@
         <div class="project-footer"><span>STATUS · LIVE STAGING</span><a href="https://gibbon-assistant.onrender.com/" target="_blank" rel="noreferrer">Open live app ↗</a></div>
       </article>
 
-      <!-- PROJECT 02: LIFE AUDIOLOGY (MOBILE SLIDESHOW) -->
+      <!-- PROJECT 02: LIFE AUDIOLOGY -->
       <article class="project reveal">
         <div class="project-top"><span>02</span><span>CLIENT DIGITAL LAUNCH · HEALTHCARE</span></div>
         <div class="project-grid">
@@ -234,7 +238,7 @@
 
     <!-- ABOUT SECTION WITH BOOK FLIP -->
     <section id="about" class="about reveal">
-      <div class="section-label">06 / THE LAB & FOUNDER</div> <br>
+      <div class="section-label">06 / THE LAB & FOUNDER</div>
       
       <div class="book-container" id="bookContainer">
         <div class="book-card front-page">
@@ -247,7 +251,7 @@
             <div class="about-actions-row">
               <div class="founder">
                 <span class="avatar">S</span>
-                <div><strong>Sreehari</strong><small>Founder & AI Developer · MOKUTTAN LABS</small></div>
+                <div><strong>Sreekuttan</strong><small>Founder & AI Developer · MOKUTTAN LABS</small></div>
               </div>
               <button class="button ghost flip-btn" id="flipBookBtn">Read Studio Ethos ↻</button>
             </div>
