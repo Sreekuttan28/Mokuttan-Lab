@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
 
-/* THEME VARIABLES (Default: Dark Space Mode) */
+/* THEME VARIABLES (Default: Dark Aerospace Space Mode) */
 :root[data-theme="dark"]{
   --bg:#070913; --panel:#111624; --text:#f4f2ee; --muted:#9ba3b0;
   --line:rgba(244,242,238,.1); --accent:#c4ff6e; --warm:#f0c29a;
@@ -8,7 +8,7 @@
   --nav-bg:rgba(7,9,19,0.85);
 }
 
-/* THEME VARIABLES (Light Cream Kerala Mode) */
+/* THEME VARIABLES (Light Cream Kerala Morning Mode) */
 :root[data-theme="light"]{
   --bg:#f8f5ee; --panel:#eee8dd; --text:#1d222b; --muted:#5c6573;
   --line:rgba(29,34,43,.12); --accent:#216b35; --warm:#b85d1c;
@@ -27,14 +27,14 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-
 
 #bg-canvas{position:fixed;inset:0;pointer-events:none;z-index:-2;opacity:.6}
 
-/* TROPICAL KERALA LANDSCAPE (Hidden in Dark Mode, Visible in Light Mode) */
-.kerala-landscape{position:fixed;bottom:0;left:0;right:0;height:220px;pointer-events:none;z-index:-2;opacity:0;transition:opacity 0.6s ease}
+/* TROPICAL KERALA LANDSCAPE (Fixed Sizing & Bounding) */
+.kerala-landscape{position:fixed;bottom:0;left:0;right:0;height:180px;pointer-events:none;z-index:-2;opacity:0;transition:opacity 0.6s ease;overflow:hidden}
 :root[data-theme="light"] .kerala-landscape{opacity:1}
 .mountain-silhouette{position:absolute;bottom:0;left:0;width:100%;height:100%;color:#1d222b}
 .coconut-trees{position:absolute;bottom:0;left:0;width:100%;height:100%}
 .tree{position:absolute;bottom:0;color:#2a362c}
-.tree-1{left:4%;width:70px;height:140px;transform:rotate(-3deg)}
-.tree-2{right:6%;width:85px;height:165px;transform:rotate(4deg)}
+.tree-1{left:4%;width:50px;height:90px;transform:rotate(-3deg)}
+.tree-2{right:6%;width:60px;height:105px;transform:rotate(4deg)}
 
 .noise{position:fixed;inset:0;opacity:.03;pointer-events:none;z-index:50;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
