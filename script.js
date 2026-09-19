@@ -1,4 +1,4 @@
-// 1. Atmospheric Ambient Background Canvas
+// 1. Adaptive Canvas Particle Mesh (Space Stars vs Morning Stardust)
 const canvas = document.getElementById('bg-canvas');
 if (canvas) {
   const ctx = canvas.getContext('2d');
@@ -10,18 +10,20 @@ if (canvas) {
     height = canvas.height = window.innerHeight;
   });
 
-  const particles = Array.from({ length: 30 }, () => ({
+  const particles = Array.from({ length: 40 }, () => ({
     x: Math.random() * width,
     y: Math.random() * height,
-    vx: (Math.random() - 0.5) * 0.35,
-    vy: (Math.random() - 0.5) * 0.35,
-    size: Math.random() * 1.5 + 0.5
+    vx: (Math.random() - 0.5) * 0.3,
+    vy: (Math.random() - 0.5) * 0.3,
+    size: Math.random() * 1.8 + 0.5
   }));
 
   function drawBg() {
     ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = 'rgba(196, 255, 110, 0.12)';
-    ctx.strokeStyle = 'rgba(196, 255, 110, 0.035)';
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    
+    ctx.fillStyle = isDark ? 'rgba(196, 255, 110, 0.6)' : 'rgba(33, 107, 53, 0.25)';
+    ctx.strokeStyle = isDark ? 'rgba(196, 255, 110, 0.05)' : 'rgba(33, 107, 53, 0.06)';
 
     particles.forEach((p, idx) => {
       p.x += p.vx;
@@ -37,7 +39,7 @@ if (canvas) {
       for (let j = idx + 1; j < particles.length; j++) {
         const p2 = particles[j];
         const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-        if (dist < 120) {
+        if (dist < 130) {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
@@ -50,7 +52,32 @@ if (canvas) {
   drawBg();
 }
 
-// 2. Diagnostic Interactive Chips
+// 2. Theme Toggle (Space Mode vs Cream Kerala Morning)
+const themeToggleBtn = document.getElementById('themeToggleBtn');
+const themeIcon = themeToggleBtn?.querySelector('.theme-icon');
+const themeLabel = themeToggleBtn?.querySelector('.theme-label');
+
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('mokuttan_theme', theme);
+  if (theme === 'dark') {
+    if (themeIcon) themeIcon.textContent = '🚀';
+    if (themeLabel) themeLabel.textContent = 'Space';
+  } else {
+    if (themeIcon) themeIcon.textContent = '🌴';
+    if (themeLabel) themeLabel.textContent = 'Kerala';
+  }
+}
+
+const savedTheme = localStorage.getItem('mokuttan_theme') || 'dark';
+setTheme(savedTheme);
+
+themeToggleBtn?.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  setTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+// 3. Diagnostic Interactive Chips
 const chips = document.querySelectorAll('.chips button');
 const ansText = document.getElementById('ans-text');
 const ansSub = document.getElementById('ans-sub');
@@ -64,7 +91,7 @@ chips.forEach(chip => {
   });
 });
 
-// 3. Gibbon Media Tab Switcher (Terminal vs Video Preview)
+// 4. Gibbon Media Tab Switcher (Video vs Terminal View)
 const mTabs = document.querySelectorAll('.m-tab');
 const mediaViews = document.querySelectorAll('.media-view');
 
@@ -74,11 +101,17 @@ mTabs.forEach(tab => {
     mediaViews.forEach(v => v.classList.remove('active-view'));
     tab.classList.add('active');
     const targetView = document.getElementById(`${tab.dataset.view}-view`);
-    if (targetView) targetView.classList.add('active-view');
+    if (targetView) {
+      targetView.classList.add('active-view');
+      const vid = targetView.querySelector('video');
+      if (vid) {
+        vid.play().catch(() => {});
+      }
+    }
   });
 });
 
-// 4. Life Audiology Mobile-Friendly Slideshow
+// 5. Life Audiology Mobile-Friendly Slideshow
 const slides = document.querySelectorAll('.slide');
 const prevBtn = document.querySelector('.slide-btn.prev');
 const nextBtn = document.querySelector('.slide-btn.next');
@@ -101,7 +134,7 @@ nextBtn?.addEventListener('click', () => {
   updateSlide(currentSlide);
 });
 
-// 5. Cinematic About Book-Flip Transition
+// 6. Cinematic About Book-Flip Transition
 const bookContainer = document.getElementById('bookContainer');
 const flipBtn = document.getElementById('flipBookBtn');
 const unflipBookBtn = document.getElementById('unflipBookBtn');
@@ -117,7 +150,7 @@ flipBtn?.addEventListener('click', () => toggleBookFlip());
 unflipBookBtn?.addEventListener('click', () => toggleBookFlip());
 aboutNavLink?.addEventListener('click', (e) => toggleBookFlip(e));
 
-// 6. Scroll Reveal Observer for Sections
+// 7. Scroll Reveal Observer for Sections
 const observer = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -129,7 +162,7 @@ const observer = new IntersectionObserver((entries, obs) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// 7. Mobile Navigation Toggle
+// 8. Mobile Navigation Toggle
 const menu = document.querySelector('.menu');
 const links = document.querySelector('.links');
 menu?.addEventListener('click', () => {
@@ -142,10 +175,10 @@ menu?.addEventListener('click', () => {
     links.style.left = '0';
     links.style.right = '0';
     links.style.padding = '20px';
-    links.style.background = '#0b0f15';
+    links.style.background = 'var(--bg)';
     links.style.flexDirection = 'column';
     links.style.alignItems = 'stretch';
-    links.style.borderBottom = '1px solid rgba(244,242,238,.1)';
+    links.style.borderBottom = '1px solid var(--line)';
   }
 });
 
