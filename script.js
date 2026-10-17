@@ -1,4 +1,4 @@
-// 1. Adaptive Canvas Particle Mesh (Space Stars vs Morning Stardust)
+// 1. Adaptive Canvas Particle Mesh
 const canvas = document.getElementById('bg-canvas');
 if (canvas) {
   const ctx = canvas.getContext('2d');
@@ -52,7 +52,7 @@ if (canvas) {
   drawBg();
 }
 
-// 2. Sliding Theme Toggle Switch (Slide Left for Kerala, Slide Right for Space)
+// 2. Sliding Theme Toggle Switch
 const themeToggleBtn = document.getElementById('themeToggleBtn');
 
 function setTheme(theme) {
@@ -82,16 +82,22 @@ chips.forEach(chip => {
   });
 });
 
-// 4. Gibbon Media Tab Switcher (Video vs Terminal View)
+// 4. Media Tab Switcher (Video Views)
 const mTabs = document.querySelectorAll('.m-tab');
 const mediaViews = document.querySelectorAll('.media-view');
 
 mTabs.forEach(tab => {
   tab.addEventListener('click', () => {
-    mTabs.forEach(t => t.classList.remove('active'));
-    mediaViews.forEach(v => v.classList.remove('active-view'));
+    // Find parent media container to scope tab switching locally
+    const container = tab.closest('.media-container');
+    const containerTabs = container.querySelectorAll('.m-tab');
+    const containerViews = container.querySelectorAll('.media-view');
+
+    containerTabs.forEach(t => t.classList.remove('active'));
+    containerViews.forEach(v => v.classList.remove('active-view'));
+    
     tab.classList.add('active');
-    const targetView = document.getElementById(`${tab.dataset.view}-view`);
+    const targetView = container.querySelector(`#${tab.dataset.view}-view`);
     if (targetView) {
       targetView.classList.add('active-view');
       const vid = targetView.querySelector('video');
@@ -102,7 +108,7 @@ mTabs.forEach(tab => {
   });
 });
 
-// 5. Life Audiology Mobile-Friendly Slideshow
+// 5. Life Audiology Slideshow
 const slides = document.querySelectorAll('.slide');
 const prevBtn = document.querySelector('.slide-btn.prev');
 const nextBtn = document.querySelector('.slide-btn.next');
@@ -125,7 +131,7 @@ nextBtn?.addEventListener('click', () => {
   updateSlide(currentSlide);
 });
 
-// 6. Cinematic About Book-Flip Transition
+// 6. Cinematic Book-Flip Transition
 const bookContainer = document.getElementById('bookContainer');
 const flipBtn = document.getElementById('flipBookBtn');
 const unflipBookBtn = document.getElementById('unflipBookBtn');
@@ -141,7 +147,7 @@ flipBtn?.addEventListener('click', () => toggleBookFlip());
 unflipBookBtn?.addEventListener('click', () => toggleBookFlip());
 aboutNavLink?.addEventListener('click', (e) => toggleBookFlip(e));
 
-// 7. Scroll Reveal Observer for Sections
+// 7. Scroll Reveal Observer
 const observer = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
